@@ -25,3 +25,20 @@ Anyway, it did work for what I wanted. I've added a crude write up here (https:/
 
 ![](docs/OWA_honeypot_2.png)
 ![](docs/OWA_honeypot_3.png)
+
+## Docker
+docker run -d -it --name owa-honeypot -p 80:80 faucet/python3 /bin/sh
+docker exec -it owa-honeypot /bin/sh
+
+## Docker hub
+docker pull cyberhack255/owa-honeypot
+docker run -d -it --name owa-honeypot  -p 80:80 cyberhack255/owa-honeypot /bin/sh
+docker exec -it owa-honeypot /bin/sh
+python3 owa_pot.py
+
+## reinstall Jinja and flask
+pip uninstall Flask Jinja2 -y
+pip install Flask Jinja2
+
+## Deleting Docker
+docker stop owa-honeypot & docker rm owa-honeypot
